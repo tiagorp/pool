@@ -1,33 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import Layout from './components/MainLayout/MainLayout'
+import Home from './routes/Home'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import PageLayout from './components/PageLayout/PageLayout'
+import About from './routes/About'
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+
+    <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<PageLayout><Home /></PageLayout>} />
+
+      <Route path="about" element={<PageLayout><About /></PageLayout>} />
+      {/* <Route path="dashboard" element={<Dashboard />} /> */}
+
+      {/* Using path="*"" means "match anything", so this route
+            acts like a catch-all for URLs that we don't have explicit
+            routes for. */}
+      {/* <Route path="*" element={<NoMatch />} /> */}
+
+    </Route>
+    </Routes>
+    </ThemeProvider>
   )
 }
 
