@@ -1,15 +1,15 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import Layout from "./components/MainLayout/MainLayout";
-import Home from "./routes/Home";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import PageLayout from "./components/PageLayout/PageLayout";
-import About from "./routes/About";
+import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './components/MainLayout/MainLayout';
+import Home from './routes/Home';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import PageLayout from './components/PageLayout/PageLayout';
+import About from './routes/About';
 
 const darkTheme = createTheme({
   palette: {
-    mode: "dark",
+    mode: 'dark',
   },
 });
 
