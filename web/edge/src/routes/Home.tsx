@@ -1,41 +1,37 @@
-import { Box, Button, Grid, TextareaAutosize, Typography } from '@mui/material'
-import { useState } from 'react'
+import { Box, Button, TextareaAutosize, Typography } from "@mui/material";
+import { useState } from "react";
 
 export default function Home() {
+  const [val, setVal] = useState("");
 
-    const [ val, setVal ] = useState("")
+  async function handleClick() {
+    let val = "";
 
-    async function handleClick() {
-
-        let val = ""
-
-        try {
-            const response = await fetch("http://localhost:8080/api/v1/ping", )
-            val = await response.json()
-        } catch (error) {
-            console.log(error)
-            val = "something went wrong; check console"
-        }
-        
-        setVal(val)
-
+    try {
+      const response = await fetch("http://localhost:8080/api/v1/ping");
+      val = await response.json();
+    } catch (error) {
+      console.log(error);
+      val = "something went wrong; check console";
     }
 
-    return (
-        <>
-            <Typography variant='h3'>Hello World!</Typography>
-            
-            <Box>
-                <Typography variant='body1'>Let's build</Typography>
-                <Button variant='contained' onClick={handleClick}>Ping!</Button> 
-            </Box>
+    setVal(val);
+  }
 
-            <Box marginTop={5}>
-                <TextareaAutosize value={val}></TextareaAutosize>
-            </Box>
+  return (
+    <>
+      <Typography variant="h3">Hello World!</Typography>
 
-            
-        </>
-    )
+      <Box>
+        <Typography variant="body1">Let us build</Typography>
+        <Button variant="contained" onClick={handleClick}>
+          Ping!
+        </Button>
+      </Box>
 
+      <Box marginTop={5}>
+        <TextareaAutosize value={val}></TextareaAutosize>
+      </Box>
+    </>
+  );
 }
