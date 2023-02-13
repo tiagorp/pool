@@ -37,7 +37,6 @@ function App() {
               </PageLayout>
             }
           />
-          {/* <Route path="dashboard" element={<Dashboard />} /> */}
 
           {/* Using path="*"" means "match anything", so this route
             acts like a catch-all for URLs that we don't have explicit

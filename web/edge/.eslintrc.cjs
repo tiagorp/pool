@@ -5,6 +5,11 @@ module.exports = {
       'plugin:react/recommended',
       'prettier'
     ],
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
     root: true,
