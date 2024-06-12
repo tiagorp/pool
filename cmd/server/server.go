@@ -20,6 +20,10 @@ func main() {
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer stop()
 
+	// Start the map to hold schedulers
+	// Start the API handler
+	// Start the ticker
+
 	router := gin.Default()
 	config := cors.DefaultConfig()
 	config.AllowOriginFunc = func(origin string) bool { return true } // allow all origins for our exercise
