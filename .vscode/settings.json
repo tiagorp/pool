@@ -1,13 +1,3 @@
 {
-    "[typescript]": {
-            "editor.tabSize": 2,
-            "editor.formatOnSave": true,
-            "editor.defaultFormatter": "esbenp.prettier-vscode",
-    },
-    "[typescriptreact]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "prettier.configPath": "./web/edge/prettierrc.json"
 }
